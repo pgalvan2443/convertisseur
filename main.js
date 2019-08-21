@@ -6,6 +6,7 @@ const radMil = ["", "millies", "dumillies", "trimillies", "quadramillies", "quin
 const alphLat = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 const numberPattern = /^[0-9]+$/
+const letterPattern = /^[a-z]+$/
 
 let number = document.getElementById('number');
 let latin = document.getElementById('latin');
@@ -207,6 +208,11 @@ function updateFromGerman(n) {
         return;
     }
 
+    if (!letterPattern.test(n)) {
+        throwError("La troisième colonne doit contenir une, deux ou trois lettres de l'alphabet latin.");
+        return;
+    };
+    
     hideError();
 
     let value = convAlphNb(n) + 1;
