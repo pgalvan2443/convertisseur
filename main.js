@@ -176,14 +176,14 @@ function hideError() {
 
 function updateFromNb(n) {
     if (!numberPattern.test(n)) {
-        throwError('"' + n + '" is not a number');
+        throwError("La première colonne doit contenir un nombre entier positif.");
         return;
     };
 
     n = n * 1;
 
     if (n >= 9999) {
-        throwError("numbers greater than 9999 are not allowed");
+        throwError("Ce programme ne traite les nombres que jusqu'à 9998.");
         return;
     }
 
@@ -203,7 +203,7 @@ function updateFromLatin(n) {
 function updateFromGerman(n) {
 
     if (n.length > 3) {
-        throwError("numbers with more than 3 characters are not allowed");
+        throwError("Ce programme ne traite la notation germanique que jusqu'à 3 lettres.");
         return;
     }
 
