@@ -203,7 +203,7 @@ function updateFromLatin(n) {
 
 function updateFromGerman(n) {
     if (!letterPattern.test(n)) {
-        throwError("La troisième colonne doit contenir une, deux ou trois lettres de l'alphabet latin.");
+        throwError("La troisième colonne doit contenir une, deux ou trois lettres non accentuées de l'alphabet latin.");
         return;
     }; 
     
