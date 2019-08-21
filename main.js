@@ -202,16 +202,15 @@ function updateFromLatin(n) {
 }
 
 function updateFromGerman(n) {
-
+    if (!letterPattern.test(n)) {
+        throwError("La troisième colonne doit contenir une, deux ou trois lettres de l'alphabet latin.");
+        return;
+    }; 
+    
     if (n.length > 3) {
         throwError("Ce programme ne traite la notation germanique que jusqu'à 3 lettres.");
         return;
     }
-
-    if (!letterPattern.test(n)) {
-        throwError("La troisième colonne doit contenir une, deux ou trois lettres de l'alphabet latin.");
-        return;
-    };
     
     hideError();
 
