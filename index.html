@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Convertisseur</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    </head>
+    <body class="layout-documentation page-components">
+        <nav class="navbar is-link " role="navigation" aria-label="main navigation">
+
+            <div class="container">
+
+                <div class="navbar-brand">
+                    <a class="navbar-item is-size-4" href="/convertisseur">
+                        <strong>Convertisseur</strong>
+                    </a>
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+            </div>
+
+        </nav>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <input class="input" id="number" type="text">
+                    </div>
+                    <div class="column">
+                        <input class="input" id="latin" type="text">
+                    </div>
+                    <div class="column">
+                        <input class="input" id="german" type="text">
+                    </div>
+                    <div class="column is-narrow">
+                        <button id="add" class="button is-success">+</button>
+                    </div>
+                </div>
+                <div id="error" class="notification is-danger" style="display:none;"></div>
+                <table id="table" class="table is-bordered is-hoverable is-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Notation latine</th>
+                        <th>Notation germanique</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <script src="main.js"></script>
+    </body>
+</html>
