@@ -1,0 +1,6 @@
+Créer une erreur pour la seconde colonne (adverbe latin non reconnu)
+Effacer les colonnes inactives en cas d'erreur
+Pouvoir effacer les lignes gardées en mémoire (bouton - dans le tableau créé en dessous)
+Rajouter le système bulgare (facile : bijection entre a-z et а-щ), en veillant à l'encodage
+Rajouter le système grec (à coder), en veillant à l'encodage, particulièrement de qoppa et sampi
+Recoder les conversions afin d'aller plus loin ?
