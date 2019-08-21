@@ -6,7 +6,7 @@ const radMil = ["", "millies", "dumillies", "trimillies", "quadramillies", "quin
 const alphLat = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 const numberPattern = /^[0-9]+$/
-const letterPattern = /^[a-z]+$/
+const letterPattern = /^[0-9]+$/
 
 let number = document.getElementById('number');
 let latin = document.getElementById('latin');
