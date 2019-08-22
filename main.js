@@ -197,8 +197,12 @@ function updateFromNb(n) {
 function updateFromLatin(n) {
     hideError();
     let value = convLatNb(n) - 1;
+    if (value !== -1) {
     number.value = value
-    german.value = convNbAlph(value);
+    german.value = convNbAlph(value);}
+    if (value === -1) {
+     number.value = 0
+     german.value = ""}
 }
 
 function updateFromGerman(n) {
