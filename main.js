@@ -178,6 +178,8 @@ function hideError() {
 function updateFromNb(n) {
     if (!numberPattern.test(n)) {
         throwError("La première colonne doit contenir un nombre entier positif.");
+        latin.value = ""
+     german.value = ""
         return;
     };
 
@@ -185,6 +187,8 @@ function updateFromNb(n) {
 
     if (n >= 9999) {
         throwError("Ce programme ne traite les nombres que jusqu'à 9998.");
+        latin.value = ""
+     german.value = ""
         return;
     }
 
@@ -202,17 +206,23 @@ function updateFromLatin(n) {
     german.value = convNbAlph(value);}
     if (value === -1) {
      number.value = 0
-     german.value = ""}
+     german.value = ""
+    throwError("Le contenu de la deuxième colonne n'est pas reconnu comme un adverbe latin bien formé.");
+    return;}
 }
 
 function updateFromGerman(n) {
     if (!letterPattern.test(n)) {
         throwError("La troisième colonne doit contenir une, deux ou trois lettres non accentuées de l'alphabet latin.");
+        number.value = 0
+     latin.value = ""
         return;
     }; 
     
     if (n.length > 3) {
         throwError("Ce programme ne traite la notation germanique que jusqu'à 3 lettres.");
+        number.value = 0
+     latin.value = ""
         return;
     }
 
