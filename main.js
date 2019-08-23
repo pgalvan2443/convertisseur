@@ -179,7 +179,7 @@ function updateFromNb(n) {
     if (!numberPattern.test(n)) {
         throwError("La première colonne doit contenir un nombre entier positif.");
         latin.value = ""
-     german.value = ""
+        german.value = ""
         return;
     };
 
@@ -188,7 +188,7 @@ function updateFromNb(n) {
     if (n >= 9999) {
         throwError("Ce programme ne traite les nombres que jusqu'à 9998.");
         latin.value = ""
-     german.value = ""
+        german.value = ""
         return;
     }
 
@@ -201,32 +201,37 @@ function updateFromNb(n) {
 function updateFromLatin(n) {
     hideError();
     let value = convLatNb(n) - 1;
+
     if (value !== -1) {
-    number.value = value
-    german.value = convNbAlph(value);}
+        number.value = value
+        german.value = convNbAlph(value);
+    }
+
     if (value === -1) {
-     number.value = 0
-     german.value = ""
-    throwError("Le contenu de la deuxième colonne n'est pas reconnu comme un adverbe latin bien formé.");
-    return;}
+        number.value = 0
+        german.value = ""
+        throwError("Le contenu de la deuxième colonne n'est pas reconnu comme un adverbe latin bien formé.");
+        return;
+    }
+
 }
 
 function updateFromGerman(n) {
     if (!letterPattern.test(n)) {
         throwError("La troisième colonne doit contenir une, deux ou trois lettres non accentuées de l'alphabet latin.");
         number.value = 0
-     latin.value = ""
+        latin.value = ""
         return;
-    }; 
-    
+    };
+
     if (n.length > 3) {
         throwError("Ce programme ne traite la notation germanique que jusqu'à 3 lettres.");
         number.value = 0
-     latin.value = ""
+        latin.value = ""
         return;
     }
 
-    
+
     hideError();
 
     let value = convAlphNb(n) + 1;
@@ -254,8 +259,17 @@ add.addEventListener('click', function() {
     second.innerHTML = latin.value;
     let third = document.createElement('td');
     third.innerHTML = german.value;
+    let fourth = document.createElement('td');
+
+    let button = document.createElement('button');
+    button.innerHTML = "❌";
+    button.classList.add('button');
+    button.addEventListener('click', () => table.removeChild(element));
+    fourth.appendChild(button);
+
     element.appendChild(first);
     element.appendChild(second);
     element.appendChild(third);
+    element.appendChild(fourth);
     table.appendChild(element);
 });
