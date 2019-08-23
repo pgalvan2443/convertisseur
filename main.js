@@ -13,7 +13,7 @@ let latin = document.getElementById('latin');
 let german = document.getElementById('german');
 let error = document.getElementById('error');
 let add = document.getElementById('add');
-let table = document.getElementById('table');
+let table = document.getElementById('main');
 
 function convNbLat(n) {
 
@@ -252,14 +252,27 @@ german.addEventListener('keyup', function() {
 });
 
 add.addEventListener('click', function() {
-    let element = document.createElement('tr');
-    let first = document.createElement('td');
+    let element = document.createElement('div');
+    element.classList.add('columns');
+
+    let first = document.createElement('div');
+    first.classList.add('column');
+    first.classList.add('has-text-centered');
     first.innerHTML = number.value;
-    let second = document.createElement('td');
+
+    let second = document.createElement('div');
+    second.classList.add('column');
+    second.classList.add('has-text-centered');
     second.innerHTML = latin.value;
-    let third = document.createElement('td');
+
+    let third = document.createElement('div');
+    third.classList.add('column');
+    third.classList.add('has-text-centered');
     third.innerHTML = german.value;
-    let fourth = document.createElement('td');
+
+    let fourth = document.createElement('div');
+    fourth.classList.add('column');
+    fourth.classList.add('is-narrow');
 
     let button = document.createElement('button');
     button.innerHTML = "❌";

@@ -25,8 +25,8 @@
 
         </nav>
         <section class="section">
-            <div class="container">
-                <div class="columns is-centered">
+            <div id="main" class="container">
+                <div class="columns">
                     <div class="column">
                         <input class="input" id="number" type="text">
                     </div>
@@ -41,14 +41,12 @@
                     </div>
                 </div>
                 <div id="error" class="notification is-danger" style="display:none;"></div>
-                <table id="table" class="table is-bordered is-hoverable is-striped">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Notation latine</th>
-                        <th>Notation germanique</th>
-                        <th>Supprimer</th>
-                    </tr>
-                </table>
+                <div id="table" class="columns">
+                    <div class="column has-text-centered"><strong>Nombre</strong></div>
+                    <div class="column has-text-centered"><strong>Notation latine</strong></div>
+                    <div class="column has-text-centered"><strong>Notation germanique</strong></div>
+                    <div class="column is-narrow"><button class="button" disabled>❌</button></div>
+                </div>
             </div>
         </section>
         <script src="main.js"></script>
